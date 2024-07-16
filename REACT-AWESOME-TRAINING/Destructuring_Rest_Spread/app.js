@@ -516,13 +516,40 @@
 //     }
 // }) ()
 
+//----------------BAI 8 : ES6 module----------------
+
+// import React, {handle, value as value1} from './react.js';
+
+// const value = 200
+
+// console.log(React);
+
+// handle()
+
+// console.log(value);
+
+// console.log(value1);
 
 
+//----------------BAI 9 : DOM(Mô hình đối tượng tài liệu----------------
+//thay đổi thẻ h1 đầu tiên [0]
+// const h1 = document.getElementsByTagName('h1')[0]
+// h1.style.color = 'red'
 
+// //tạo thẻ h2 
+// const h2 = document.createElement('h2')
+// h2.textContent = 'I am Nhien'
 
+// console.log(document.getElementsByTagName('h2')[0]);
+// //chèn thẻ h2 tạo ở trên vào thẻ body 
+// document.body.appendChild(h2)
 
+// console.log(document.getElementsByTagName('h2')[0]);
 
-
-
-
+class Person {
+    constructor(name, age){
+        this.name = name
+        this.age = age
+    }
+}
 
