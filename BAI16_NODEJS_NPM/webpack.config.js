@@ -12,8 +12,9 @@ module.exports = {
         app: path.resolve('src/index.js')
     },
     output: {
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'dist'),
         // filename: 'script.js'
+        filename:'[name].[contenthash].js' // generate dựa trên thay đổi trong code
     },
     module: {
         rules: [
@@ -24,7 +25,9 @@ module.exports = {
         ]
     },
     plugins: [
-        new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin({
+            filename:'[name].[contenthash].css'
+        }),
         new HtmlWebpackPlugin({
             title: 'Webpack App',
             filename: 'index.html',
