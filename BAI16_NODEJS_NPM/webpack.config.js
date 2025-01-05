@@ -14,7 +14,8 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         // filename: 'script.js'
-        filename:'[name].[contenthash].js' // generate dựa trên thay đổi trong code
+        filename:'[name].[contenthash].js', // generate dựa trên thay đổi trong code
+        clean: true
     },
     module: {
         rules: [

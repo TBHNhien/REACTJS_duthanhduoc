@@ -2,5 +2,5 @@
 
 import './styles/styles.css'
 import './styles/styles.scss'
-console.log(sum(100,40))
+console.log(sum(100,10))
 
