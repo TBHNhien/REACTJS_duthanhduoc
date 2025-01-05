@@ -6,8 +6,11 @@ console.log('__dirname',__dirname);
 console.log('path.resolve', path.resolve());
 console.log(`path.resolve(__dirname, 'dist')`, path.resolve(__dirname, 'dist'));
 
-module.exports = {
-    mode: 'production', 
+module.exports =(env)=>{
+    console.log(process.env.NODE_ENV)
+    const isDevelopment = process.env.NODE_ENV === 'development'
+return{
+    mode: isDevelopment ? 'development' : 'production', 
     entry: {
         app: path.resolve('src/index.js')
     },
@@ -17,6 +20,7 @@ module.exports = {
         filename:'[name].[contenthash].js', // generate dựa trên thay đổi trong code
         clean: true
     },
+    devtool: isDevelopment ? 'source-map' : false,
     module: {
         rules: [
             {
@@ -45,5 +49,5 @@ module.exports = {
         compress: false, // Bật Gzip cho các tài nguyên
         historyApiFallback: true // Set true nếu bạn dùng cho các SPA và sử dụng History API của HTML5
     }
-};
+}};
 
